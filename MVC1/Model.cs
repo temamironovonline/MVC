@@ -38,7 +38,14 @@ namespace MVC1
                             answer.Text = Convert.ToString(Convert.ToDouble(firstNumber.Text) * Convert.ToDouble(secondNumber.Text));
                             break;
                         case 3:
-                            answer.Text = Convert.ToString(Convert.ToDouble(firstNumber.Text) / Convert.ToDouble(secondNumber.Text));
+                            if (Convert.ToDouble(secondNumber.Text) == 0)
+                            {
+                                MessageBox.Show("Деление на 0 невозможно!");
+                            }
+                            else
+                            {
+                                answer.Text = Convert.ToString(Convert.ToDouble(firstNumber.Text) / Convert.ToDouble(secondNumber.Text));
+                            }
                             break;
                     }
                 }
